@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Capitolo 2 - Cos'è l'IA?</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/theme/white.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/highlight/monokai.css">
+    
+    <style>
+        .reveal {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .reveal h1, .reveal h2, .reveal h3 {
+            color: #2c3e50;
+            font-weight: 300;
+        }
+        
+        .reveal .slides section {
+            text-align: left;
+        }
+        
+        .reveal .title-slide {
+            text-align: center;
+        }
+        
+        .timeline-item {
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+        }
+        
+        .vs-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .vs-item {
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .vs-weak {
+            background: #ffe6e6;
+            border: 2px solid #e74c3c;
+        }
+        
+        .vs-strong {
+            background: #e6f3ff;
+            border: 2px solid #3498db;
+        }
+        
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+        
+        .example-card {
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #27ae60;
+        }
+        
+        .smaller-text {
+            font-size: 0.8em;
+        }
+        
+        .definition-box {
+            font-size: 1.5em;
+            text-align: center;
+            background: #e8f4f8;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+        
+        .chapter-title {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            
+            <!-- Title Slide -->
+            <section class="title-slide">
+                <h1>Capitolo 2</h1>
+                <h2>Cos'è l'Intelligenza Artificiale?</h2>
+                <p>
+                    <small>Spiegazione semplice e accessibile con esempi pratici</small>
+                </p>
+            </section>
+            
+            <!-- Overview -->
+            <section>
+                <h2>In questo capitolo</h2>
+                <ol>
+                    <li class="fragment">Definizione semplice dell'IA</li>
+                    <li class="fragment">IA forte vs IA debole</li>
+                    <li class="fragment">Esempi dalla vita quotidiana</li>
+                </ol>
+            </section>
+            
+            <!-- 2.1 Simple Definition -->
+            <section>
+                <h2>2.1. Definizione semplice</h2>
+                <div class="definition-box fragment">
+                    <strong>L'Intelligenza Artificiale è la capacità di una macchina di eseguire compiti che normalmente richiederebbero intelligenza umana.</strong>
+                </div>
+            </section>
+            
+            <section>
+                <h2>Cosa intendiamo per "intelligenza umana"?</h2>
+                <div class="examples-grid">
+                    <div class="example-card fragment">
+                        <strong>Riconoscere</strong>
+                        <p class="smaller-text">Volti, oggetti, parole parlate</p>
+                    </div>
+                    <div class="example-card fragment">
+                        <strong>Comprendere</strong>
+                        <p class="smaller-text">Linguaggio, contesto, significato</p>
+                    </div>
+                    <div class="example-card fragment">
+                        <strong>Decidere</strong>
+                        <p class="smaller-text">Basandosi su informazioni e esperienza</p>
+                    </div>
+                    <div class="example-card fragment">
+                        <strong>Imparare</strong>
+                        <p class="smaller-text">Dall'esperienza e migliorare nel tempo</p>
+                    </div>
+                    <div class="example-card fragment">
+                        <strong>Creare</strong>
+                        <p class="smaller-text">Nuove idee, soluzioni, contenuti</p>
+                    </div>
+                    <div class="example-card fragment">
+                        <strong>Comunicare</strong>
+                        <p class="smaller-text">In modo naturale e comprensibile</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 2.2 Strong vs Weak AI -->
+            <section>
+                <h2>2.2. IA forte vs IA debole</h2>
+                <p>Non tutta l'IA è uguale. Esistono due tipi principali:</p>
+            </section>
+            
+            <section>
+                <h2>I due tipi di IA</h2>
+                <div class="vs-container">
+                    <div class="vs-item vs-weak fragment">
+                        <h3 style="color: #e74c3c; margin-top: 0;">IA debole<br>(Narrow AI)</h3>
+                        <p><strong>Quella che usiamo oggi</strong></p>
+                        <ul class="smaller-text" style="text-align: left;">
+                            <li>Specializzata in compiti specifici</li>
+                            <li>Non ha coscienza o comprensione generale</li>
+                            <li>Molto efficace nel suo dominio</li>
+                            <li>Non può applicare le conoscenze ad altri domini</li>
+                        </ul>
+                    </div>
+                    <div class="vs-item vs-strong fragment">
+                        <h3 style="color: #3498db; margin-top: 0;">IA forte<br>(AGI)</h3>
+                        <p><strong>Obiettivo futuro</strong></p>
+                        <ul class="smaller-text" style="text-align: left;">
+                            <li>Intelligenza generale come quella umana</li>
+                            <li>Potenzialmente cosciente</li>
+                            <li>Può apprendere qualsiasi compito</li>
+                            <li>Ancora non esiste</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section>
+                <h2>Esempi di IA debole</h2>
+                <div class="examples-grid">
+                    <div class="timeline-item fragment">
+                        <strong>Siri/Alexa</strong>
+                        <p class="smaller-text">Riconoscimento vocale e risposta a domande</p>
+                    </div>
+                    <div class="timeline-item fragment">
+                        <strong>Google Traduttore</strong>
+                        <p class="smaller-text">Traduzione tra lingue</p>
+                    </div>
+                    <div class="timeline-item fragment">
+                        <strong>Netflix</strong>
+                        <p class="smaller-text">Raccomandazione di film e serie</p>
+                    </div>
+                    <div class="timeline-item fragment">
+                        <strong>Auto che parcheggia</strong>
+                        <p class="smaller-text">Assistenza al parcheggio</p>
+                    </div>
+                </div>
+                <div class="fragment">
+                    <p style="margin-top: 2rem; font-style: italic;">Ognuna di queste IA è "esperta" nel suo compito, ma non può fare altro.</p>
+                </div>
+            </section>
+            
+            <!-- 2.3 Daily Examples -->
+            <section>
+                <h2>2.3. L'IA nella nostra vita quotidiana</h2>
+                <p>Potreste usare l'IA più spesso di quanto pensiate!</p>
+            </section>
+            
+            <section>
+                <h2>La mattina</h2>
+                <div class="examples-grid">
+                    <div class="example-card fragment">
+                        <strong>Smartphone</strong>
+                        <p class="smaller-text">Riconoscimento facciale per sbloccare</p>
+                    </div>
+                    <div class="example-card fragment">
+                        <strong>Notizie</strong>
+                        <p class="smaller-text">Google News seleziona articoli per voi</p>
+                    </div>
+                    <div class="example-card fragment">
+                        <strong>Email</strong>
+                        <p class="smaller-text">Filtro automatico dello spam</p>
+                    </div>
+                    <div class="example-card fragment">
+                        <strong>Navigatore</strong>
+                        <p class="smaller-text">Google Maps calcola il percorso migliore</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section>
+                <h2>Durante il giorno</h2>
+                <div class="examples-grid">
+                    <div class="example-card fragment">
+                        <strong>Shopping online</strong>
+                        <p class="smaller-text">Amazon suggerisce prodotti che potrebbero interessarvi</p>
+                    </div>
+                    <div class="example-card fragment">
+                        <strong>Social media</strong>
+                        <p class="smaller-text">Facebook decide quali post mostrarvi</p>
+                    </div>
+                    <div class="example-card fragment">
+                        <strong>Ricerca Google</strong>
+                        <p class="smaller-text">Capisce cosa cercate e ordina i risultati</p>
+                    </div>
+                    <div class="example-card fragment">
+                        <strong>Assistenti vocali</strong>
+                        <p class="smaller-text">"Alexa, che tempo fa oggi?"</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section>
+                <h2>La sera</h2>
+                <div class="examples-grid">
+                    <div class="example-card fragment">
+                        <strong>Netflix/Prime Video</strong>
+                        <p class="smaller-text">"Altri film che potrebbero piacerti"</p>
+                    </div>
+                    <div class="example-card fragment">
+                        <strong>Spotify</strong>
+                        <p class="smaller-text">Playlist personalizzate basate sui gusti</p>
+                    </div>
+                    <div class="example-card fragment">
+                        <strong>Casa intelligente</strong>
+                        <p class="smaller-text">Termostato che impara le vostre abitudini</p>
+                    </div>
+                    <div class="example-card fragment">
+                        <strong>Foto</strong>
+                        <p class="smaller-text">Google Foto riconosce persone e luoghi</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section>
+                <h2>IA "invisibile" ma essenziale</h2>
+                <div class="timeline-item fragment">
+                    <strong>Sicurezza online</strong>
+                    <p class="smaller-text">Rilevamento di frodi nelle transazioni bancarie</p>
+                </div>
+                <div class="timeline-item fragment">
+                    <strong>Medicina</strong>
+                    <p class="smaller-text">Analisi di radiografie e TAC per diagnostica</p>
+                </div>
+                <div class="timeline-item fragment">
+                    <strong>Trasporti</strong>
+                    <p class="smaller-text">Ottimizzazione del traffico nelle città</p>
+                </div>
+                <div class="timeline-item fragment">
+                    <strong>Energia</strong>
+                    <p class="smaller-text">Gestione intelligente delle reti elettriche</p>
+                </div>
+            </section>
+            
+            <section>
+                <h2>Cosa rende "intelligente" questa tecnologia?</h2>
+                <ul>
+                    <li class="fragment"><strong>Apprendimento:</strong> Migliora con l'uso e l'esperienza</li>
+                    <li class="fragment"><strong>Adattamento:</strong> Si adatta alle vostre preferenze</li>
+                    <li class="fragment"><strong>Predizione:</strong> Anticipa cosa potreste volere</li>
+                    <li class="fragment"><strong>Personalizzazione:</strong> Ogni esperienza è unica per voi</li>
+                </ul>
+                <div class="fragment" style="margin-top: 2rem;">
+                    <p style="text-align: center; font-style: italic;">
+                        Non è magia: è matematica molto sofisticata che impara dai dati!
+                    </p>
+                </div>
+            </section>
+            
+            <!-- Interaction Section -->
+            <section>
+                <h2>Momento di riflessione</h2>
+                <div style="background: #fff3cd; padding: 2rem; border-radius: 10px;">
+                    <p><strong>Domande per il pubblico:</strong></p>
+                    <ul>
+                        <li>Quale di questi esempi usate già nella vostra vita?</li>
+                        <li>C'è qualche esempio che vi ha sorpreso?</li>
+                        <li>Avevate mai pensato che fosse "intelligenza artificiale"?</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <!-- Summary -->
+            <section>
+                <h2>Riassumendo</h2>
+                <div class="definition-box">
+                    L'IA di oggi è "ristretta" ma molto potente nei suoi domini specifici
+                </div>
+                <ul>
+                    <li class="fragment">È già presente in moltissimi aspetti della nostra vita</li>
+                    <li class="fragment">Spesso non ce ne accorgiamo perché funziona "dietro le quinte"</li>
+                    <li class="fragment">Non è cosciente, ma è molto efficace nel suo compito</li>
+                    <li class="fragment">L'AGI (IA generale) rimane un obiettivo futuro</li>
+                </ul>
+            </section>
+            
+            <!-- Conclusion -->
+            <section>
+                <h2>Cosa abbiamo imparato</h2>
+                <ul>
+                    <li class="fragment">L'IA imita capacità tipicamente umane</li>
+                    <li class="fragment">L'IA di oggi è "debole" ma molto specializzata</li>
+                    <li class="fragment">È già ovunque nella nostra vita quotidiana</li>
+                    <li class="fragment">Spesso lavora "dietro le quinte" per migliorare la nostra esperienza</li>
+                </ul>
+                <div class="fragment" style="margin-top: 2rem;">
+                    <p style="text-align: center; font-style: italic;">
+                        Ora che sappiamo cos'è l'IA, esploriamo come la utilizziamo ogni giorno...
+                    </p>
+                </div>
+            </section>
+            
+            <!-- Navigation -->
+            <section class="title-slide">
+                <h1>Fine Capitolo 2</h1>
+                <p>
+                    <a href="../introduzione/">← Capitolo precedente</a><br>
+                    <a href="../../">← Torna all'indice</a>
+                </p>
+            </section>
+            
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/highlight/highlight.js"></script>
+    
+    <script>
+        Reveal.initialize({
+            hash: true,
+            controls: true,
+            progress: true,
+            center: false,
+            transition: 'slide',
+            plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+        });
+    </script>
+</body>
+</html>

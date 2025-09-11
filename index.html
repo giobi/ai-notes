@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Notes - Presentazioni del Corso</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 300;
+        }
+        
+        .header p {
+            margin: 1rem 0 0 0;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .presentations {
+            display: grid;
+            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+        
+        .presentation-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid #667eea;
+        }
+        
+        .presentation-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .presentation-card h3 {
+            margin: 0 0 1rem 0;
+            color: #333;
+            font-size: 1.4rem;
+        }
+        
+        .presentation-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .presentation-card a {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: opacity 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .presentation-card a:hover {
+            opacity: 0.9;
+        }
+        
+        .info-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+        }
+        
+        .info-section h2 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        
+        .info-section ul {
+            line-height: 1.8;
+            color: #666;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-left: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>AI Notes</h1>
+        <p>Corso di Introduzione all'Intelligenza Artificiale per l'Università della Terza Età</p>
+    </div>
+    
+    <div class="presentations">
+        <div class="presentation-card">
+            <h3>Congresso Verbania <span class="badge">Principale</span></h3>
+            <p>Presentazione completa del corso "Introduzione all'IA per l'Università della Terza Età". Include tutti e quattro i capitoli: dall'introduzione storica agli aspetti etici e al futuro dell'intelligenza artificiale.</p>
+            <a href="presentation/congresso-verbania/">Visualizza Presentazione</a>
+        </div>
+        
+        <div class="presentation-card">
+            <h3>Introduzione all'IA <span class="badge">Capitolo 1</span></h3>
+            <p>Dal sogno di Asimov alla realtà di ChatGPT. Una panoramica storica che mostra come l'intelligenza artificiale sia passata dalla fantascienza alla vita quotidiana.</p>
+            <a href="presentation/introduzione/">Visualizza Presentazione</a>
+        </div>
+        
+        <div class="presentation-card">
+            <h3>Cos'è l'IA? <span class="badge">Capitolo 2</span></h3>
+            <p>Spiegazione semplice e accessibile dell'intelligenza artificiale, con esempi pratici dalla vita quotidiana e la distinzione tra IA forte e IA debole.</p>
+            <a href="presentation/cose-ia/">Visualizza Presentazione</a>
+        </div>
+    </div>
+    
+    <div class="info-section">
+        <h2>Informazioni sul Corso</h2>
+        <ul>
+            <li><strong>Durata:</strong> 90 minuti (incluse domande e discussioni)</li>
+            <li><strong>Pubblico:</strong> Università della Terza Età</li>
+            <li><strong>Formato:</strong> Presentazioni interattive con reveal.js</li>
+            <li><strong>Struttura:</strong> 4 capitoli principali + sessione Q&A</li>
+        </ul>
+    </div>
+    
+    <div class="info-section">
+        <h2>Navigazione delle Presentazioni</h2>
+        <ul>
+            <li>Usa le <strong>frecce direzionali</strong> per navigare tra le slide</li>
+            <li>Premi <strong>ESC</strong> per vedere l'overview delle slide</li>
+            <li>Premi <strong>F</strong> per la modalità schermo intero</li>
+            <li>Premi <strong>S</strong> per le note del relatore</li>
+        </ul>
+    </div>
+</body>
+</html>

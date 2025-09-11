@@ -1,0 +1,39 @@
+# GitHub Pages configuration for AI Notes
+title: "AI Notes - Corso di Introduzione all'IA"
+description: "Presentazioni del corso di Introduzione all'Intelligenza Artificiale per l'Università della Terza Età"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# Site settings
+lang: it
+baseurl: "" # Leave empty if using custom domain or repository name as domain
+url: "https://giobi.github.io/ai-notes" # Update with actual GitHub Pages URL
+
+# GitHub Pages plugin
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Include reveal.js presentations
+include:
+  - presentation
+
+# Exclude unnecessary files
+exclude:
+  - appunti
+  - capitoli
+  - risorse
+  - issues
+  - HOWTO.md
+  - README.md
+  - .gitignore
+
+# Set default layout for HTML files
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: null

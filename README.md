@@ -30,6 +30,9 @@ Una volta che un'idea dagli appunti è matura, la si sposta qui. Ogni file in qu
 ### 🎯 `/slides`
 Qui verranno inserite le presentazioni finali del corso. Questa cartella rappresenta il risultato finale del lavoro.
 
+### 🌐 `/presentation`
+Presentazioni interattive create con reveal.js, accessibili via web. Ogni presentazione ha la propria cartella e può essere visualizzata direttamente nel browser.
+
 ### 🔗 `/risorse`
 Un archivio di materiali di approfondimento, sia per il docente che per i partecipanti al corso.
 
@@ -40,9 +43,24 @@ Un archivio di materiali di approfondimento, sia per il docente che per i partec
 3. **Creazione**: Utilizza il contenuto dei capitoli per creare le slide
 4. **Archiviazione**: Aggiungi risorse utili nella cartella `/risorse`
 
+## Presentazioni Web
+
+Il corso è disponibile come presentazioni interattive reveal.js accessibili via web:
+
+- **[Presentazione completa - Congresso Verbania](presentation/congresso-verbania/)** - Tutti i 4 capitoli
+- **[Capitolo 1 - Introduzione](presentation/introduzione/)** - Dal sogno alla realtà
+- **[Capitolo 2 - Cos'è l'IA?](presentation/cose-ia/)** - Definizioni e esempi
+
+### Navigazione delle Presentazioni
+- Usa le frecce direzionali per navigare
+- `ESC` per overview delle slide
+- `F` per modalità schermo intero
+- `S` per note del relatore
+
 ## Come Contribuire
 
 1. Aggiungi nuove idee nella cartella `appunti/`
 2. Organizza il contenuto maturo in `capitoli/`
 3. Raccogli risorse interessanti in `risorse/`
 4. Crea le presentazioni finali in `slides/`
+5. Le presentazioni web vengono generate automaticamente da `capitoli/`
