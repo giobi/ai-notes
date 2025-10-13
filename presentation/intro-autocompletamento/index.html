@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Intro - Dall'Autocompletamento a ChatGPT</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/theme/white.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/highlight/monokai.css">
+
+    <style>
+        .reveal {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .reveal h1, .reveal h2, .reveal h3 {
+            color: #2c3e50;
+            font-weight: 300;
+        }
+
+        .reveal .slides section {
+            text-align: left;
+        }
+
+        .reveal .title-slide {
+            text-align: center;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            text-align: center;
+        }
+
+        .example-box {
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .comparison-item {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        .scale-comparison {
+            background: #fff3cd;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .big-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #3498db;
+        }
+
+        .question-box {
+            background: #e8f4f8;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            text-align: center;
+            font-size: 1.2em;
+        }
+
+        .smaller-text {
+            font-size: 0.8em;
+        }
+
+        .emoji {
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- Title Slide -->
+            <section class="title-slide">
+                <h1>Dall'Autocompletamento a ChatGPT</h1>
+                <h3>Come funziona davvero l'intelligenza artificiale</h3>
+                <p>
+                    <small>Un viaggio dalla tecnologia che usiamo ogni giorno alla rivoluzione dell'IA</small>
+                </p>
+            </section>
+
+            <!-- Parte 1: L'esperienza quotidiana -->
+            <section>
+                <h2>Alzi la mano chi usa WhatsApp</h2>
+                <div class="fragment">
+                    <p style="font-size: 1.2em;">📱 Quando scrivete un messaggio...</p>
+                    <div class="example-box fragment">
+                        <p>Voi scrivete: <strong>"Buon"</strong></p>
+                        <p>Il telefono suggerisce: <strong style="color: #3498db;">"giorno"</strong> o <strong style="color: #3498db;">"pomeriggio"</strong></p>
+                    </div>
+                    <div class="example-box fragment">
+                        <p>Voi scrivete: <strong>"A dopo"</strong></p>
+                        <p>Il telefono suggerisce: <strong style="color: #3498db;">"a presto"</strong></p>
+                    </div>
+                </div>
+                <div class="fragment" style="margin-top: 2rem;">
+                    <p style="text-align: center; font-size: 1.3em;">Questo si chiama <strong style="color: #e74c3c;">autocompletamento</strong></p>
+                </div>
+            </section>
+
+            <!-- Parte 2: Come funziona -->
+            <section>
+                <h2>Ma come fa a saperlo?</h2>
+                <div class="fragment">
+                    <p>Il telefono ha <strong>analizzato milioni di messaggi</strong> (in forma anonima) e ha imparato che:</p>
+                    <ul class="fragment">
+                        <li>Dopo "Buon" → di solito viene "giorno" o "compleanno"</li>
+                        <li>Dopo "Come stai" → spesso si risponde "Bene, tu?"</li>
+                        <li>Dopo "Ci vediamo" → viene "domani", "stasera", "presto"</li>
+                    </ul>
+                </div>
+                <div class="highlight-box fragment" style="margin-top: 2rem;">
+                    <p><strong>Il telefono non "capisce" cosa significa "Buongiorno"</strong></p>
+                    <p>Ha solo imparato le <strong>statistiche</strong>:<br>quali parole seguono tipicamente altre parole</p>
+                </div>
+            </section>
+
+            <!-- Parte 3: Il salto quantitativo -->
+            <section>
+                <h2>E se... potesse imparare da molto di più?</h2>
+                <div class="fragment">
+                    <p>Cosa succederebbe se questa tecnologia imparasse da:</p>
+                    <ul>
+                        <li class="fragment">📚 <strong>Tutti i libri</strong> mai scritti</li>
+                        <li class="fragment">🌍 <strong>Wikipedia</strong> intera in tutte le lingue</li>
+                        <li class="fragment">💬 <strong>Milioni di conversazioni</strong>, articoli, documenti</li>
+                        <li class="fragment">🔢 <strong>Centinaia di miliardi</strong> di frasi</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Il salto quantitativo</h2>
+                <div class="scale-comparison">
+                    <p><span class="emoji">📱</span> <strong>Autocompletamento del telefono:</strong></p>
+                    <p class="big-number">~1.000.000 frasi</p>
+                </div>
+                <div class="scale-comparison fragment">
+                    <p><span class="emoji">🤖</span> <strong>ChatGPT (GPT-3):</strong></p>
+                    <p class="big-number">~300.000.000.000 parole</p>
+                    <p class="smaller-text">(trecentomiliardi!)</p>
+                </div>
+                <div class="fragment" style="margin-top: 2rem;">
+                    <p style="text-align: center; font-size: 1.2em;">E invece di suggerire solo la prossima parola...<br>suggerisce <strong>frasi, paragrafi, ragionamenti interi</strong></p>
+                </div>
+            </section>
+
+            <section class="title-slide">
+                <div class="highlight-box">
+                    <h2 style="color: white;">ChatGPT è un autocompletamento ultra-potente</h2>
+                </div>
+            </section>
+
+            <!-- Parte 4: Dimostrazione pratica -->
+            <section>
+                <h2>Proviamo insieme</h2>
+                <div class="example-box fragment">
+                    <p>Io scrivo: <strong>"Il gatto è salito sul..."</strong></p>
+                    <p class="fragment">Voi cosa direste? <span class="fragment">→ <strong style="color: #3498db;">tetto, albero, divano</strong></span></p>
+                </div>
+                <div class="fragment" style="margin-top: 2rem;">
+                    <p>Anche voi state facendo <strong>autocompletamento</strong>, basato sulla vostra esperienza di vita!</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Esempi più complessi</h2>
+                <div class="example-box fragment">
+                    <p><strong>"La teoria della relatività di Einstein spiega che..."</strong></p>
+                    <p class="smaller-text fragment">→ ChatGPT ha letto migliaia di testi su Einstein e può completare accuratamente</p>
+                </div>
+                <div class="example-box fragment">
+                    <p><strong>"Ricetta per fare la carbonara: ingredienti..."</strong></p>
+                    <p class="smaller-text fragment">→ ChatGPT ha visto migliaia di ricette e può dare una ricetta corretta</p>
+                </div>
+                <div class="fragment" style="margin-top: 2rem;">
+                    <p style="text-align: center;">Non sta "pensando" alla carbonara.<br>Sta <strong>prevedendo le parole</strong> che statisticamente vengono dopo</p>
+                </div>
+            </section>
+
+            <!-- Parte 5: La domanda cruciale -->
+            <section>
+                <h2>Il punto cruciale</h2>
+                <div class="question-box fragment">
+                    <p>Quando l'autocompletamento diventa così sofisticato, così accurato, così ampio da coprire qualsiasi argomento...</p>
+                    <p style="margin-top: 1rem;"><strong>inizia a SEMBRARE intelligente</strong></p>
+                </div>
+            </section>
+
+            <section>
+                <div class="question-box">
+                    <p style="font-size: 1.5em; color: #e74c3c;">Ma è veramente intelligente?</p>
+                    <p style="margin-top: 2rem;">Capisce davvero cosa dice?</p>
+                    <p>O è "solo" un gioco di specchi statistico incredibilmente complesso?</p>
+                </div>
+                <div class="fragment" style="margin-top: 2rem;">
+                    <p style="text-align: center; font-style: italic;">Questa domanda ci accompagnerà per tutto il corso...</p>
+                </div>
+            </section>
+
+            <!-- Diagramma semplificato -->
+            <section>
+                <h2>Come funziona (semplificato)</h2>
+                <div style="background: #f8f9fa; padding: 2rem; border-radius: 10px; margin: 2rem 0;">
+                    <p style="text-align: center;"><strong>Input:</strong> "Il gatto è salito sul..."</p>
+                    <p style="text-align: center; font-size: 2em; color: #3498db;">↓</p>
+                    <p style="text-align: center; background: white; padding: 1rem; border-radius: 5px;">
+                        <strong>Analisi pattern da milioni di frasi</strong>
+                    </p>
+                    <p style="text-align: center; font-size: 2em; color: #3498db;">↓</p>
+                    <p style="text-align: center;"><strong>Output:</strong></p>
+                    <ul style="list-style: none; text-align: center;">
+                        <li>"tetto" (45%)</li>
+                        <li>"albero" (30%)</li>
+                        <li>"divano" (15%)</li>
+                        <li>...</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Recap -->
+            <section>
+                <h2>Ricapitoliamo</h2>
+                <ul>
+                    <li class="fragment">✅ Tutti usiamo l'autocompletamento ogni giorno</li>
+                    <li class="fragment">✅ Funziona imparando <strong>pattern statistici</strong> dai dati</li>
+                    <li class="fragment">✅ ChatGPT è lo stesso concetto portato all'estremo</li>
+                    <li class="fragment">✅ Ha "letto" praticamente tutto Internet</li>
+                    <li class="fragment">✅ Prevede non solo parole, ma frasi e ragionamenti</li>
+                    <li class="fragment">⚠️ Non "capisce" - fa <strong>predizioni statistiche</strong></li>
+                </ul>
+            </section>
+
+            <!-- Transizione -->
+            <section>
+                <h2>Ma come siamo arrivati qui?</h2>
+                <div class="fragment">
+                    <p>Questa tecnologia non è nata dal nulla...</p>
+                    <p style="margin-top: 2rem;">Per capire il presente, dobbiamo fare un passo indietro e scoprire la storia dell'intelligenza artificiale.</p>
+                    <p style="margin-top: 2rem;">Tutto è iniziato molti anni fa, con uno scrittore di fantascienza e il sogno di creare macchine intelligenti...</p>
+                </div>
+            </section>
+
+            <!-- Final slide -->
+            <section class="title-slide">
+                <div class="highlight-box">
+                    <h2 style="color: white;">Ora sapete il "segreto" dell'IA</h2>
+                    <p style="color: white;">È evoluzione di qualcosa che già conoscevate</p>
+                </div>
+                <p style="margin-top: 2rem;">
+                    <a href="../../">← Torna all'indice</a><br>
+                    <a href="../introduzione/">Continua: Capitolo 1 - Storia dell'IA →</a>
+                </p>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/highlight/highlight.js"></script>
+
+    <script>
+        Reveal.initialize({
+            hash: true,
+            controls: true,
+            progress: true,
+            center: false,
+            transition: 'slide',
+            plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+        });
+    </script>
+</body>
+</html>
