@@ -25,6 +25,7 @@ Conferma sempre l'avvio della sessione con un breve messaggio in italiano.
 - Documenta ogni modifica significativa nel diary
 - Mantieni la struttura delle cartelle organizzata
 - Crea commit chiari e descrittivi
+- **IMPORTANTE**: Quando modifichi presentazioni in `/presentation`, verifica sempre che siano visibili su GitHub Pages: https://giobi.github.io/ai-notes/
 
 ### Gestione del Codice
 - Preferisci modifiche incrementali a grandi riscritture
@@ -38,9 +39,14 @@ Il progetto è organizzato in:
 - `/appunti`: Idee grezze e materiale non organizzato
 - `/capitoli`: Contenuto definitivo organizzato per capitolo
 - `/slides`: Presentazioni finali
-- `/presentation`: Presentazioni web interattive (reveal.js)
+- `/presentation`: Presentazioni web interattive (reveal.js) - **pubblicate su GitHub Pages**
 - `/risorse`: Materiali di approfondimento
 - `/docs`: Documentazione tecnica e diary
+
+### GitHub Pages
+- **URL**: https://giobi.github.io/ai-notes/
+- Le presentazioni in `/presentation` sono accessibili pubblicamente
+- Verifica sempre dopo il push che le modifiche siano visibili online
 
 ## Note Speciali
 

@@ -117,13 +117,90 @@ app/ai-notes/
 - GitHub Pages: https://giobi.github.io/ai-notes
 - Tecnologie: reveal.js, Jekyll, Markdown
 
+### Task 5: Sviluppo Intro Tecnica
+Creato `appunti/intro-tecnica-autocompletamento.md` e `appunti/intro-alternative.md`
+
+#### Intro Tecnica - Concept "Dall'Autocompletamento a ChatGPT"
+**File**: `appunti/intro-tecnica-autocompletamento.md`
+
+Script completo (4 minuti) che spiega:
+1. **Esperienza quotidiana**: Autocompletamento su WhatsApp
+2. **Meccanismo base**: Statistiche, pattern recognition, milioni di messaggi
+3. **Salto quantitativo**: Da 1M frasi a 300B parole (ChatGPT)
+4. **Demo pratica**: "Il gatto è salito sul..." - coinvolgimento pubblico
+5. **Domanda filosofica**: "È davvero intelligente o solo statistica sofisticata?"
+
+**Punti di forza**:
+- Demistifica l'IA partendo da esperienza condivisa
+- Nessun tecnicismo (no "neural networks", solo "pattern")
+- Accessibile per terza età
+- Introduce dubbio per Cap. 4 (etica e futuro)
+
+#### 3 Alternative per Intro Emozionale
+**File**: `appunti/intro-alternative.md`
+
+1. **Aneddoto Nonna** - Storia vera truffa voce clonata (emotivo, forte impatto)
+2. **Quiz Interattivo** - Indovina immagini reali vs AI (sorprendente, coinvolgente)
+3. **Confronto Generazionale** - Luna 1969 → HAL 9000 → oggi (nostalgico, celebrativo)
+
+### Task 6: Creazione Presentazione Reveal.js
+Creata presentazione web interattiva completa
+
+**File**: `presentation/intro-autocompletamento/index.html`
+
+Presentazione reveal.js con:
+- 15 slide complete con animazioni e transizioni
+- Design responsive e professionale
+- Esempi interattivi preparati
+- Box highlights per concetti chiave
+- Confronto visivo scale (1M vs 300B)
+- Diagramma flusso semplificato
+- Transizione naturale verso Cap. 1
+
+**Elementi visivi**:
+- Emoji per rendere più friendly
+- Box colorati per evidenziare concetti
+- Grid comparison telefono vs ChatGPT
+- Question box per domande filosofiche
+
+### Task 7: Git Commit
+**Commit**: `4e417f0`
+**Messaggio**: "Aggiunta presentazione introduttiva e materiali di brainstorming"
+
+File committati:
+- 9 files changed, 1202 insertions(+)
+- Tutti i nuovi appunti, docs e presentazione
+
+**Nota**: Push richiede autenticazione (repository usa HTTPS). Da fare manualmente.
+
 ## Note Finali
 
-Setup completato con successo. La struttura di documentazione è ora pronta per tracciare lo sviluppo del progetto. Il Capitolo 1 ha buone basi e idee concrete per l'espansione. Il prossimo step sarà decidere quali idee integrare e iniziare a lavorare sugli altri capitoli.
+### Sessione Completa
+Setup e primo sviluppo contenuti completati con successo:
 
-**Stato**: ✅ Setup completato
-**Prossima sessione**: Sviluppo contenuti capitoli o lavoro su progetto circus
+✅ **Infrastruttura**: Docs, diary, base-prompt creati
+✅ **Brainstorming**: 3 alternative intro + espansione Cap. 1
+✅ **Contenuto tecnico**: Script completo intro autocompletamento
+✅ **Presentazione**: Slide reveal.js pronte per l'uso
+✅ **Git**: Commit fatto, push da fare manualmente
+
+### Deliverables Pronti
+1. **Presentazione web**: `presentation/intro-autocompletamento/` accessibile via browser
+2. **Script dettagliato**: `appunti/intro-tecnica-autocompletamento.md` con timing e note
+3. **Opzioni alternative**: `appunti/intro-alternative.md` per variare approccio
+4. **Idee espansione**: `appunti/capitolo-1-idee-espansione.md` per arricchire contenuto
+
+### Prossimi Step Suggeriti
+- [ ] Test presentazione in browser locale
+- [ ] Push manuale su GitHub
+- [ ] Decidere quale intro usare (tecnica vs emozionale vs ibrida)
+- [ ] Sviluppare Capitoli 2, 3, 4
+- [ ] Raccogliere risorse multimediali (video, immagini)
+
+**Stato**: ✅ Prima sessione completata con successo
+**Tempo totale**: ~30 minuti
+**Output**: 9 nuovi file, 1200+ righe di contenuto
 
 ---
 
-*Fine sessione: 2025-10-13 ~07:20 UTC*
+*Fine sessione: 2025-10-13 ~07:35 UTC*
