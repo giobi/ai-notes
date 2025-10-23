@@ -83,15 +83,144 @@ metti le emoticon e fai qualche battuta in spagnolo
 
 ---
 
-## [Placeholder Altri Esempi]
+## 📄 Revisore di Documenti Complessi (ChatGPT/Gemini/Claude)
 
-### Esempio 2: [Da aggiungere]
-...
+### Contesto
+Nel lavoro tecnico mi capita di ricevere:
+- PDF lunghi con documentazione tecnica
+- Response di API web (JSON, XML)
+- Documentazione che potrebbe contenere errori o contraddizioni
 
-### Esempio 3: [Da aggiungere]
-...
+Invece di leggermi 50+ pagine cercando l'errore, **incollo l'intero corpus nell'IA**.
+
+### Prompt Usato
+
+```
+[Incollo PDF/response API intera]
+
+Analizza questo documento e dimmi se trovi:
+- Errori logici o tecnici
+- Contraddizioni interne
+- Sezioni che dicono cose opposte
+```
+
+### Esempi di Risposta IA
+- ✅ "Mi sembra un errore dal lato del server nella sezione 3.2"
+- ✅ "Alla pagina 12 c'è scritto di non fare X, ma alla pagina 27 c'è scritto di fare X"
+- ✅ "Il parametro 'timeout' nella documentazione dice 30s, ma negli esempi usano 60s"
+
+### ⚠️ IMPORTANTE: Verifica Sistematica
+**Dopo la risposta dell'IA, faccio SEMPRE review sistematica per evitare allucinazioni.**
+
+L'IA è bravissima a trovare pattern sospetti, ma:
+- Potrebbe inventare contraddizioni che non esistono
+- Potrebbe non capire contesto tecnico specifico
+- Serve comunque un umano per confermare
+
+### Utilità per Seminario 60+?
+
+**Probabilmente NO come demo live** (troppo tecnico), **MA utile come concetto**:
+
+**Come spiegarlo ai 60+**:
+> "Immaginate di ricevere un contratto di 50 pagine.
+> Invece di leggerlo tutto cercando clausole strane,
+> lo date all'IA e chiedete: 'Ci sono contraddizioni? Clausole pericolose?'
+> L'IA vi segnala le parti sospette da controllare meglio.
+>
+> **NON sostituisce l'avvocato**, ma vi fa risparmiare tempo
+> indicandovi DOVE guardare con attenzione."
+
+### Varianti Relatable per 60+
+
+- "Controlla questo contratto di assicurazione, ci sono clausole nascoste?"
+- "Ho ricevuto questa email dall'INPS, mi sembra strana, cosa ne pensi?"
+- "Questi due preventivi dicono cose diverse, quali sono le differenze?"
+
+---
+
+## 🧩 Potenza vs Coerenza: Perché Uso Ancora Notion e Drive
+
+### Il Problema con gli LLM (Esperienza Vera)
+
+**Punto di forza dell'IA**: POTENZA DI FUOCO
+- Claude/ChatGPT/Gemini sono "cannoni"
+- Possono fare tantissime cose velocemente
+- Scrivere, tradurre, analizzare, generare codice
+
+**Punto debole dell'IA**: COERENZA NEL TEMPO
+- Ogni conversazione è isolata
+- Non "ricorda" cosa abbiamo fatto ieri (a meno di sistemi appositi)
+- Non mantiene organizzazione coerente dei progetti
+
+### Come Lavoro Io: Combinazione IA + Strumenti Umani
+
+**Notion e Google Drive**: Li uso come "memoria permanente"
+- **Notion** = quaderno organizzato dove scrivo:
+  - Progetti in corso
+  - Decisioni prese
+  - Link importanti
+  - Task da fare
+
+- **Google Drive** = scaffale dove metto:
+  - Documenti finali
+  - Versioni salvate
+  - File condivisi con team
+
+**IA (Claude/ChatGPT/Gemini)**: Li uso come "assistente temporaneo"
+- Scrivo bozze velocemente
+- Traduco documenti
+- Analizzo dati
+- Genero idee
+
+**Flusso di Lavoro**:
+1. Chiedo all'IA di scrivermi bozza documento
+2. Revisiono e sistemo
+3. Salvo versione finale in Drive/Notion
+4. Domani, quando riprendo progetto, lo rileggo da Drive (non dall'IA)
+
+### Come Spiegarlo ai 60+ (ELI5)
+
+**Notion/Drive NON sono "app fighissime"**, sono:
+
+> **Notion** = Il vostro quaderno/agenda dove scrivete:
+> - "Martedì: telefonare dottore"
+> - "Progetto cucina: preventivo idraulico €800"
+> - "Password WiFi: scrivi qui"
+>
+> Ma digitale, organizzato, sempre con voi.
+
+> **Google Drive** = Il cassetto dove tenete:
+> - Ricette stampate
+> - Documenti dell'auto
+> - Foto delle vacanze
+>
+> Ma online, accessibile da telefono/computer, condivisibile con figli/nipoti.
+
+### Messaggio Chiave per Seminario
+
+> "L'intelligenza artificiale è POTENTISSIMA ma **smemorata**.
+>
+> È come avere un assistente bravissimo che però ogni mattina
+> dimentica tutto quello che avete fatto ieri.
+>
+> Per questo io uso:
+> - **IA** per fare cose velocemente (scrivere, tradurre, analizzare)
+> - **Notion/Drive** per ricordarmi cosa ho fatto e dove sono arrivato
+>
+> **Non sostituisce l'organizzazione umana. La potenzia.**"
+
+### Dove Inserirlo nel Seminario
+
+**Opzione 1**: Capitolo "Limiti dell'IA" (dopo esperimenti)
+- Mostrare che l'IA è potente ma ha limiti
+- Spiegare come combinarla con strumenti tradizionali
+
+**Opzione 2**: Q&A finale
+- Risposta a "Ma allora l'IA sostituisce tutto?"
+- Mostrare workflow reale di combinazione tool
 
 ---
 
 **Note**: Questi esempi VERI sono oro per il seminario.
 Pubblico 60+ vuole vedere utilità concreta, non teoria.
+**E soprattutto vuole sapere COME usare l'IA nel mondo reale, non in isolamento.**
