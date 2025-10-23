@@ -8,10 +8,58 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/theme/white.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/highlight/monokai.css">
-    
+
+    <!-- Monospace font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+
     <style>
         .reveal {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Beautiful monospace font for code and prompts */
+        .reveal code,
+        .reveal pre,
+        .reveal pre code,
+        .reveal .prompt-box,
+        .reveal .code-block {
+            font-family: 'Fira Code', 'JetBrains Mono', 'Source Code Pro', Consolas, Monaco, 'Courier New', monospace;
+            font-variant-ligatures: normal;
+        }
+
+        .reveal pre {
+            width: 100%;
+            margin: 1rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .reveal pre code {
+            max-height: 600px;
+            padding: 1.5rem;
+            border-radius: 8px;
+            font-size: 0.85em;
+            line-height: 1.5;
+        }
+
+        .reveal code {
+            background: #f4f4f4;
+            padding: 0.2em 0.5em;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: #c7254e;
+        }
+
+        .reveal .prompt-box {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+            font-size: 0.9em;
+            line-height: 1.6;
+            margin: 1rem 0;
         }
         
         .reveal h1, .reveal h2, .reveal h3 {

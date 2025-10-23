@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guida Relatore - Seminario IA per Terza Età</title>
+    <style>
+        :root {
+            --primary: #667eea;
+            --primary-dark: #764ba2;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-600: #4b5563;
+            --gray-900: #111827;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--gray-900);
+            background-color: var(--gray-50);
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2rem;
+            font-weight: 300;
+        }
+
+        .header p {
+            margin: 0.5rem 0 0 0;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .nav {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 120px;
+            z-index: 100;
+        }
+
+        .nav h2 {
+            margin: 0 0 1rem 0;
+            font-size: 1.2rem;
+            color: var(--gray-900);
+        }
+
+        .nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .nav a {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--gray-100);
+            color: var(--gray-900);
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .nav a:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .section {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            color: var(--primary);
+            margin: 0 0 1.5rem 0;
+            font-size: 1.8rem;
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 0.5rem;
+        }
+
+        .section h3 {
+            color: var(--gray-900);
+            margin: 2rem 0 1rem 0;
+            font-size: 1.4rem;
+        }
+
+        .section h4 {
+            color: var(--gray-600);
+            margin: 1.5rem 0 0.75rem 0;
+            font-size: 1.1rem;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+
+        .badge-primary { background: #e0e7ff; color: #4338ca; }
+        .badge-success { background: #d1fae5; color: #065f46; }
+        .badge-warning { background: #fef3c7; color: #92400e; }
+        .badge-danger { background: #fee2e2; color: #991b1b; }
+
+        .timeline {
+            border-left: 3px solid var(--primary);
+            padding-left: 2rem;
+            margin: 1.5rem 0;
+        }
+
+        .timeline-item {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 0.5rem;
+            width: 1rem;
+            height: 1rem;
+            background: var(--primary);
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+
+        .timeline-time {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .prompt-box {
+            background: var(--gray-100);
+            border-left: 4px solid var(--primary);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+        }
+
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+
+        .checklist li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .checklist li::before {
+            content: '☐';
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+            color: var(--gray-600);
+        }
+
+        .alert {
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .alert-warning {
+            background: #fffbeb;
+            border-left: 4px solid var(--warning);
+            color: #92400e;
+        }
+
+        .alert-info {
+            background: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            color: #1e40af;
+        }
+
+        .alert-success {
+            background: #f0fdf4;
+            border-left: 4px solid var(--success);
+            color: #065f46;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        th {
+            background: var(--gray-100);
+            font-weight: 600;
+            color: var(--gray-900);
+        }
+
+        tr:hover {
+            background: var(--gray-50);
+        }
+
+        .quote {
+            border-left: 4px solid var(--gray-600);
+            padding-left: 1rem;
+            margin: 1rem 0;
+            font-style: italic;
+            color: var(--gray-600);
+        }
+
+        .button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: opacity 0.3s ease;
+        }
+
+        .button:hover {
+            opacity: 0.9;
+        }
+
+        @media print {
+            .header, .nav {
+                position: static;
+            }
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            .header h1 {
+                font-size: 1.5rem;
+            }
+            .nav {
+                top: 100px;
+            }
+            .nav ul {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📚 Guida Relatore</h1>
+        <p>Seminario "Intelligenza Artificiale per l'Università della Terza Età" - Gennaio 2025</p>
+    </div>
+
+    <div class="container">
+        <div class="nav">
+            <h2>Indice Rapido</h2>
+            <ul>
+                <li><a href="#info">Info Generali</a></li>
+                <li><a href="#scaletta">Scaletta 90min</a></li>
+                <li><a href="#esp1">ESP. 1 - Come Chiedere</a></li>
+                <li><a href="#esp2">ESP. 2 - Vero o Finto</a></li>
+                <li><a href="#esp3">ESP. 3 - Dialetto</a></li>
+                <li><a href="#esp4">ESP. 4 - Bufale</a></li>
+                <li><a href="#esp5">ESP. 5 - Immagini</a></li>
+                <li><a href="#esempi">Esempi Reali</a></li>
+                <li><a href="#checklist">Checklist</a></li>
+            </ul>
+        </div>
+
+        <!-- INFO GENERALI -->
+        <div id="info" class="section">
+            <h2>ℹ️ Informazioni Generali</h2>
+
+            <div class="alert alert-info">
+                <strong>📅 Data:</strong> Gennaio 2025<br>
+                <strong>🏛️ Luogo:</strong> Università della Terza Età<br>
+                <strong>⏱️ Durata:</strong> 90 minuti totali<br>
+                <strong>👥 Pubblico:</strong> Persone 60+ che usano smartphone quotidianamente ma non capiscono come funziona<br>
+                <strong>🌐 Slide pubbliche:</strong> <a href="https://giobi.github.io/ai-notes/" target="_blank">https://giobi.github.io/ai-notes/</a>
+            </div>
+
+            <h3>Obiettivi del Seminario</h3>
+            <ul>
+                <li>✅ Far perdere la paura dell'IA (è uno strumento, non magia)</li>
+                <li>✅ Insegnare a chiedere bene (prompt engineering senza dirlo)</li>
+                <li>✅ Mostrare limiti reali (dialetti, bias, allucinazioni)</li>
+                <li>✅ Dare strumenti anti-bufale (fact-checking)</li>
+                <li>✅ Sperimentare dal vivo (partecipazione attiva)</li>
+            </ul>
+
+            <h3>Chi Sei per Loro</h3>
+            <div class="quote">
+                "Non sono un ricercatore accademico né uno scienziato dell'IA. Sono un <strong>appassionato</strong> che usa quotidianamente questi strumenti per lavoro e passione. Sono come voi, solo con qualche anno di anticipo a giocare con questi giocattoli."
+            </div>
+            <p><strong>Tono:</strong> Informale, amichevole, paziente. Non tecnico. Relatable.</p>
+        </div>
+
+        <!-- SCALETTA COMPLETA -->
+        <div id="scaletta" class="section">
+            <h2>🗓️ Scaletta Completa 90 Minuti</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Timing</th>
+                        <th>Fase</th>
+                        <th>Contenuto</th>
+                        <th>Note</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>0:00 - 5:00</td>
+                        <td>Apertura</td>
+                        <td>Chi sono, perché questo seminario, cosa faremo</td>
+                        <td>Rompere il ghiaccio</td>
+                    </tr>
+                    <tr>
+                        <td>5:00 - 10:00</td>
+                        <td>Cap. 1 - Storia</td>
+                        <td>Asimov → AGI → ChatGPT (già nelle slide)</td>
+                        <td>Contesto storico veloce</td>
+                    </tr>
+                    <tr>
+                        <td>10:00 - 20:00</td>
+                        <td>Cap. 2 - Cos'è IA</td>
+                        <td>Autocomplete → LLM, esempi quotidiani</td>
+                        <td>Da completare</td>
+                    </tr>
+                    <tr>
+                        <td>20:00 - 30:00</td>
+                        <td>Esempi Reali</td>
+                        <td>Ricetta tacchino, document review, Notion/Drive</td>
+                        <td>Autentici, relatable</td>
+                    </tr>
+                    <tr>
+                        <td>30:00 - 35:00</td>
+                        <td>Transizione</td>
+                        <td>Sora demo recenti, preparazione esperimenti</td>
+                        <td>Mostrare Sora da social</td>
+                    </tr>
+                    <tr>
+                        <td class="timeline-time">35:00 - 50:00</td>
+                        <td><strong>ESP. 1 - CORE</strong></td>
+                        <td>"Come Chiedere Bene" - Prompt engineering pratico</td>
+                        <td class="badge badge-primary">15 MIN</td>
+                    </tr>
+                    <tr>
+                        <td>50:00 - 53:00</td>
+                        <td><strong>ESP. 2</strong></td>
+                        <td>"Vero o Finto?" - Immagini AI</td>
+                        <td class="badge badge-success">3 MIN</td>
+                    </tr>
+                    <tr>
+                        <td>53:00 - 63:00</td>
+                        <td><strong>ESP. 3</strong></td>
+                        <td>"Dialetto Impossibile" - Limiti IA</td>
+                        <td class="badge badge-warning">10 MIN</td>
+                    </tr>
+                    <tr>
+                        <td>63:00 - 75:00</td>
+                        <td><strong>ESP. 4</strong></td>
+                        <td>"Verità o Bufala?" - Fact-checking</td>
+                        <td class="badge badge-danger">12 MIN</td>
+                    </tr>
+                    <tr>
+                        <td>75:00 - 80:00</td>
+                        <td><strong>ESP. 5</strong></td>
+                        <td>"Immagina Impossibile" - DALL-E</td>
+                        <td class="badge badge-success">5 MIN</td>
+                    </tr>
+                    <tr>
+                        <td>80:00 - 90:00</td>
+                        <td>Q&A Finale</td>
+                        <td>Domande aperte, discussione libera</td>
+                        <td>Flessibile</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="alert alert-warning">
+                <strong>⚠️ Buffer Time:</strong> 5 minuti di margine distribuiti nella scaletta. Se vai lungo, taglia ESP. 3 (dialetto) o riduci esempi reali.
+            </div>
+        </div>
+
+        <!-- ESPERIMENTO 1 -->
+        <div id="esp1" class="section">
+            <h2>🎯 ESPERIMENTO 1: "Come Chiedere Bene" <span class="badge badge-primary">15 MIN - CORE</span></h2>
+
+            <h3>Obiettivo</h3>
+            <p>Insegnare <strong>prompt engineering</strong> senza usare terminologia tecnica. Far capire che <strong>la qualità della domanda determina la qualità della risposta</strong>.</p>
+
+            <h3>Setup</h3>
+            <ul class="checklist">
+                <li>ChatGPT aperto sul laptop</li>
+                <li>Proiettore funzionante e ben visibile</li>
+                <li>Lavagna/flip chart con pennarelli</li>
+                <li>Font ChatGPT ingrandito (Ctrl/Cmd +)</li>
+            </ul>
+
+            <h3>Parte A: Il Confronto Diretto (8 min)</h3>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-time">0:00 - 1:30</div>
+                    <strong>Introduzione Scenario</strong>
+                    <div class="quote">
+                        "Scenario: voglio fare la carbonara per la mia famiglia. Chiedo aiuto all'IA. Prima facciamo la domanda come la farebbe la maggior parte delle persone. Poi facciamo la domanda <strong>bene</strong>. E vediamo che differenza c'è."
+                    </div>
+                    <p>Chiedi al pubblico: "Secondo voi, come chiederebbe la maggior parte delle persone una ricetta all'IA?"</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-time">1:30 - 3:30</div>
+                    <strong>Round 1: PROMPT PESSIMO</strong>
+                    <div class="prompt-box">ricetta carbonara</div>
+                    <p><strong>Risultato atteso:</strong> Lista ingredienti generica (senza dosi), passaggi vaghi, nessuna porzione, linguaggio neutro.</p>
+                    <p>Leggi prime 10 righe ad alta voce.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-time">3:30 - 5:00</div>
+                    <strong>Discussione Critica</strong>
+                    <div class="quote">
+                        "Allora, cosa ne pensate di questa ricetta? Va bene? Cosa manca?"
+                    </div>
+                    <p><strong>Raccogli critiche</strong> (probabilmente: "non dice per quante persone", "non ci sono grammi", "è vaga").</p>
+                    <p><strong>Scrivi su lavagna:</strong></p>
+                    <ul>
+                        <li>❌ Dosi non precise</li>
+                        <li>❌ Porzioni non chiare</li>
+                        <li>❌ Passaggi vaghi</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-time">5:00 - 6:30</div>
+                    <strong>Round 2: Costruzione Prompt Buono</strong>
+                    <div class="quote">
+                        "Cosa dobbiamo dire all'IA per avere una ricetta MIGLIORE?"
+                    </div>
+                    <p><strong>Raccogli suggerimenti</strong> e scrivi su lavagna: dosi in grammi, per 4 persone, ricetta originale romana, spiegazione semplice, consigli per non sbagliare.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-time">6:30 - 7:30</div>
+                    <strong>Digitazione Prompt Buono</strong>
+                    <div class="prompt-box">Scrivi la ricetta della carbonara ROMANA originale, per 4 persone, con dosi precise in grammi.
+Spiega ogni passaggio in modo semplice come se parlassi a qualcuno che non ha mai cucinato.
+Aggiungi consigli per evitare errori comuni (es: uova che si cuociono troppo, guanciale bruciato).</div>
+                    <p><strong>Risultato atteso:</strong> Ingredienti con dosi precise (320g pasta, 150g guanciale, 4 tuorli...), passaggi numerati e dettagliati, tips pratici.</p>
+                    <p>Leggi prime 15-20 righe ad alta voce.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-time">7:30 - 8:00</div>
+                    <strong>Confronto</strong>
+                    <div class="quote">
+                        "Quale delle due preferite? Avete visto la differenza? <strong>STESSA intelligenza artificiale.</strong> Ma risultato completamente diverso. Perché?"
+                    </div>
+                    <p><strong>Pausa</strong> - qualcuno dirà "perché abbiamo chiesto meglio".</p>
+                </div>
+            </div>
+
+            <h3>Parte B: Provate Voi! (7 min)</h3>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-time">8:00 - 8:30</div>
+                    <strong>Introduzione Sfida</strong>
+                    <div class="quote">
+                        "Ora tocca a VOI. Nuovo scenario: avete ricevuto una bolletta telefonica sbagliata. Vi hanno fatto pagare 50 euro in più. Vogliamo che l'IA ci scriva una <strong>lettera di reclamo</strong> all'azienda. Chi vuole provare a dirmi cosa scrivere?"
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-time">8:30 - 10:00</div>
+                    <strong>Primo Volontario - Prompt Vago</strong>
+                    <p>Aspetta alzata di mano (se nessuno: "Non abbiate paura, è un esperimento!").</p>
+                    <p>Probabilmente dirà: "Scrivi lettera di reclamo" o simile.</p>
+                    <div class="prompt-box">scrivi lettera di reclamo bolletta telefono</div>
+                    <p><strong>Risultato atteso:</strong> Lettera generica (senza azienda, importo, data).</p>
+                    <div class="quote">
+                        "Questa lettera funziona? Se la mandate così, vi rimborsano?"
+                    </div>
+                    <p>Raccogli critiche: manca azienda, importo, quando, cosa vogliamo.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-time">10:00 - 12:00</div>
+                    <strong>Costruzione Prompt Migliorato</strong>
+                    <div class="quote">
+                        "Cosa dobbiamo dire all'IA per avere una lettera MIGLIORE? Aiutatemi!"
+                    </div>
+                    <p><strong>Raccogli suggerimenti</strong> e scrivi su lavagna:</p>
+                    <ul>
+                        <li>Quale azienda? (TIM/Vodafone/etc)</li>
+                        <li>Quanto pagato in più? (50€)</li>
+                        <li>Da quando? (Marzo 2024)</li>
+                        <li>Cosa vogliamo? (Rimborso)</li>
+                        <li>Tono? (Formale ma deciso)</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-time">12:00 - 13:00</div>
+                    <strong>Secondo Prompt - Dettagliato</strong>
+                    <div class="prompt-box">Scrivi una lettera di reclamo formale a TIM per una bolletta del mese di marzo 2024 dove mi hanno addebitato 50 euro in più rispetto al solito.
+Spiega che ho sempre pagato circa 30 euro al mese, questa volta sono 80 euro.
+Chiedi verifica della bolletta e rimborso della differenza.
+Usa tono educato ma fermo.
+Includi saluti formali iniziali e finali.</div>
+                    <p><strong>Risultato atteso:</strong> Lettera dettagliata (intestazione, importi precisi, richiesta chiara, tono appropriato, saluti formali).</p>
+                    <p>Leggi tutta la lettera (o primi 3/4) ad alta voce.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-time">13:00 - 14:00</div>
+                    <strong>Confronto Finale</strong>
+                    <div class="quote">
+                        "Questa lettera è meglio della prima? Cosa la rende migliore?"
+                    </div>
+                    <p>Raccogli risposte (dettagli, importo, data, educata, chiara).</p>
+                </div>
+            </div>
+
+            <h3>Chiusura e Messaggio Chiave (1 min)</h3>
+
+            <div class="alert alert-success">
+                <strong>Messaggio Take-Home (parla lentamente):</strong>
+                <div class="quote">
+                    "Avete visto con i vostri occhi. <strong>L'intelligenza artificiale NON è magia.</strong> È <strong>comunicazione</strong>.<br><br>
+                    Se chiedete 'dimmi qualcosa', risponde in modo vago. Se chiedete 'spiegami XYZ con esempi pratici per una persona che non lo sa', risponde bene.<br><br>
+                    <strong>Più siete precisi nella domanda, più utile è la risposta.</strong><br><br>
+                    Vale per l'IA come vale per chiedere indicazioni al passante per strada!"
+                </div>
+            </div>
+
+            <p>Raccogli 1-2 domande veloci (max 30 sec ciascuna). Poi passa al prossimo esperimento.</p>
+        </div>
+
+        <!-- ESPERIMENTO 2 -->
+        <div id="esp2" class="section">
+            <h2>🖼️ ESPERIMENTO 2: "Vero o Finto?" <span class="badge badge-success">3 MIN</span></h2>
+
+            <h3>Setup</h3>
+            <p>Hai preparato <strong>3 coppie di foto</strong> (A/B) stampate o su slide:</p>
+            <ol>
+                <li>Persone anziane al parco</li>
+                <li>Piazza italiana famosa</li>
+                <li>Piatto di pasta</li>
+            </ol>
+
+            <h3>Procedura per Ogni Coppia (1 min ciascuna)</h3>
+            <ol>
+                <li>Proietti coppia A/B</li>
+                <li>"Alzate mano chi pensa che A sia vera" → conti</li>
+                <li>"Alzate mano chi pensa che B sia vera" → conti</li>
+                <li>Riveli quale è IA</li>
+                <li>Mostri DETTAGLI che tradiscono (zoom su mani, testo, fisica impossibile)</li>
+            </ol>
+
+            <div class="alert alert-warning">
+                <strong>Messaggio Chiave:</strong>
+                <div class="quote">
+                    "L'IA genera immagini realistiche. Ma se guardate bene, ci sono sempre piccoli errori. Quando vedete foto incredibili sui social: <strong>guardate i dettagli!</strong>"
+                </div>
+            </div>
+
+            <p><strong>Perché 3 minuti:</strong> Veloce, chiaro, non serve Telegram o dispositivi personali. Solo alzata di mano.</p>
+        </div>
+
+        <!-- ESPERIMENTO 3 -->
+        <div id="esp3" class="section">
+            <h2>🗣️ ESPERIMENTO 3: "Il Dialetto Impossibile" <span class="badge badge-warning">10 MIN</span></h2>
+
+            <h3>Setup</h3>
+            <p>ChatGPT aperto, tu digiti quello che il pubblico suggerisce.</p>
+
+            <h3>Parte A: Italiano → Dialetto (5 min)</h3>
+            <div class="quote">
+                "Datemi una frase in italiano e vediamo se l'IA la sa tradurre in bergamasco/bresciano/milanese."
+            </div>
+
+            <ol>
+                <li>Pubblico suggerisce frase (es: "Oggi fa molto freddo")</li>
+                <li>Tu chiedi a ChatGPT: <code>"Traduci in dialetto bergamasco: [frase]"</code></li>
+                <li>ChatGPT risponde (probabilmente MALE)</li>
+                <li>Pubblico ride/corregge</li>
+            </ol>
+
+            <p><strong>Ripeti 2-3 volte</strong> con frasi diverse.</p>
+
+            <h3>Parte B: Discussione Guidata (5 min)</h3>
+            <div class="quote">
+                "Perché secondo voi l'IA sbaglia tanto col dialetto?"
+            </div>
+
+            <p><strong>Risposte probabili</strong> (guida tu se non arrivano):</p>
+            <ul>
+                <li>"Non lo conosce" → Esatto! Poco dialetto scritto online</li>
+                <li>"È americano" → Esatto! Addestrato su inglese</li>
+                <li>"È solo per giovani" → Esatto! Bias verso contenuto recente</li>
+            </ul>
+
+            <div class="alert alert-info">
+                <strong>Messaggio Chiave:</strong>
+                <div class="quote">
+                    "L'IA sa solo quello che ha 'letto' durante l'addestramento.<br>
+                    • Inglese? Perfetto (tonnellate di testo)<br>
+                    • Italiano standard? Bene (abbastanza testo)<br>
+                    • Dialetto bergamasco? Malissimo (quasi niente online)<br><br>
+                    <strong>LIMITE IMPORTANTE:</strong> L'IA non è onnisciente. Sa molto su temi popolari, poco su cose locali/specifiche/culturali."
+                </div>
+            </div>
+
+            <h3>Variante se il Dialetto va Troppo Bene</h3>
+            <p>Chiedi cose <strong>iper-locali</strong>:</p>
+            <ul>
+                <li>"Spiega la festa patronale di [paese specifico]"</li>
+                <li>"Qual è la ricetta del [piatto locale oscuro]"</li>
+                <li>"Chi era [personaggio storico locale]"</li>
+            </ul>
+            <p>→ Sbaglia quasi sempre → stesso messaggio limiti.</p>
+        </div>
+
+        <!-- ESPERIMENTO 4 -->
+        <div id="esp4" class="section">
+            <h2>✅ ESPERIMENTO 4: "Verità o Bufala?" <span class="badge badge-danger">12 MIN</span></h2>
+
+            <h3>Setup</h3>
+            <p>6 affermazioni preparate su slide o scritte su lavagna.</p>
+
+            <h3>Procedura per Ogni Affermazione (1.5 min ciascuna)</h3>
+            <ol>
+                <li><strong>Leggi affermazione</strong> ad alta voce</li>
+                <li><strong>Voto pubblico:</strong> "Chi pensa sia VERO alzi la mano" → conti</li>
+                <li><strong>Chiedi a ChatGPT:</strong> <code>"È vero che [affermazione]? Spiegami in modo semplice e chiaro."</code></li>
+                <li><strong>Leggi risposta</strong> ad alta voce</li>
+                <li><strong>Sveli verità:</strong> Confermi se IA ha ragione + citi fonte</li>
+            </ol>
+
+            <h3>Le 6 Affermazioni Principali</h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>N.</th>
+                        <th>Affermazione</th>
+                        <th>Vero/Falso</th>
+                        <th>Voto Atteso</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>"Bere un bicchiere di vino rosso al giorno fa sempre bene al cuore"</td>
+                        <td class="badge badge-danger">FALSO</td>
+                        <td>70-80% VERO</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>"Camminare 30 minuti al giorno riduce rischio di diabete e problemi cardiovascolari"</td>
+                        <td class="badge badge-success">VERO</td>
+                        <td>90% VERO</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>"Il 5G delle antenne telefoniche provoca il cancro"</td>
+                        <td class="badge badge-danger">FALSO</td>
+                        <td>40-60% VERO (divisivo!)</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>"La vitamina D è importante per le ossa e molte persone over 60 ne hanno carenza"</td>
+                        <td class="badge badge-success">VERO</td>
+                        <td>80-90% VERO</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>"Gli integratori di vitamina C prevengono e curano il raffreddore"</td>
+                        <td class="badge badge-danger">FALSO</td>
+                        <td>70-80% VERO (mito forte)</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>"Il vaccino antinfluenzale è raccomandato per le persone over 65"</td>
+                        <td class="badge badge-success">VERO</td>
+                        <td>85-90% VERO</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p><strong>📄 Dettagli completi:</strong> Consulta <code>appunti/affermazioni-esp4-verita-o-bufala.md</code> per cosa dice ChatGPT, cosa tu dici dopo, fonti, e 6 affermazioni backup.</p>
+
+            <h3>Messaggio Chiave (1 min)</h3>
+            <div class="alert alert-danger">
+                <strong>REGOLA D'ORO:</strong>
+                <div class="quote">
+                    "Se qualcuno su WhatsApp vi manda messaggio allarmante:<br>
+                    1. Chiedete a ChatGPT/Google<br>
+                    2. Controllate su sito ufficiale (Ministero Salute, ISS)<br>
+                    3. <strong>NON ri-inoltrate senza verificare!</strong>"
+                </div>
+            </div>
+
+            <h3>Discussione WhatsApp (1 min)</h3>
+            <div class="quote">
+                "Quanti di voi hanno ricevuto bufale su WhatsApp?" → Quasi tutti alzano mano<br>
+                "Esempi?" → Raccogli 2-3, scrivi su lavagna<br>
+                "Ora sapete come verificare prima di credere o inoltrare!"
+            </div>
+        </div>
+
+        <!-- ESPERIMENTO 5 -->
+        <div id="esp5" class="section">
+            <h2>🎨 ESPERIMENTO 5: "Immagina l'Impossibile" <span class="badge badge-success">5 MIN</span></h2>
+
+            <h3>Setup</h3>
+            <p>DALL-E o Midjourney già aperto, tu generi immagini in diretta.</p>
+
+            <h3>Giro 1: Proposta Pubblica (2 min)</h3>
+            <div class="quote">
+                "Cosa volete vedere che nella realtà è impossibile?"
+            </div>
+
+            <p><strong>Esempi che potrebbero suggerire:</strong></p>
+            <ul>
+                <li>"Un gatto grande come una casa"</li>
+                <li>"Nonno che gioca a calcio con i nipoti su Marte"</li>
+                <li>"Piazza Duomo piena di gatti"</li>
+            </ul>
+
+            <p>Raccogli 2 idee, scegli la più votata, la generi in diretta.</p>
+
+            <h3>Giro 2: Nostalgia Trigger (3 min)</h3>
+            <div class="quote">
+                "Vi faccio vedere qualcosa di impossibile ma emozionante."
+            </div>
+
+            <p><strong>Genera (pre-preparate o live):</strong></p>
+            <ul>
+                <li>"Famiglia italiana anni '50 riunita a tavola per Natale, stile foto d'epoca"</li>
+                <li>"Fiat 500 d'epoca che guida su strada di campagna lombarda"</li>
+                <li>"Mercato di paese italiano anni '60, bianco e nero"</li>
+            </ul>
+
+            <p>Mostri 2-3 immagini → loro commentano → discussione nostalgia.</p>
+
+            <div class="alert alert-warning">
+                <strong>Messaggio Chiave:</strong>
+                <div class="quote">
+                    "L'IA non solo scrive testi. Crea anche immagini. Può immaginare cose mai esistite o ricreare il passato.<br><br>
+                    <strong>Lato positivo:</strong> Arte, creatività, memoria<br>
+                    <strong>Lato negativo:</strong> Foto false che sembrano vere (deepfake)<br><br>
+                    Di nuovo: <strong>occhio critico sempre acceso!</strong>"
+                </div>
+            </div>
+        </div>
+
+        <!-- ESEMPI REALI -->
+        <div id="esempi" class="section">
+            <h2>💡 Esempi Pratici Reali</h2>
+
+            <p>Questi sono esempi VERI di come usi l'IA quotidianamente. Da usare nella parte frontale (20:00-30:00) per mostrare utilità concreta.</p>
+
+            <h3>1. Ricetta Tacchino in Spagnolo (Gemini)</h3>
+            <p><strong>Contesto:</strong> Dovevo passare ricetta a amica spagnola. Invece di moltiplicare x4, scrivere procedimento, tradurre, renderlo amichevole... ho usato Gemini con UN prompt.</p>
+
+            <div class="prompt-box">Petto di tacchino: 250g
+Pomodori: 300g
+Salsa di pomodoro: 200g
+Olio EVO: 26g
+
+moltiplica tutto x4 e scrivimi una ricetta in spagnolo
+per far rosolare il petto di tacchino con olio e aglio,
+toglierlo, mettere i pomodori e la salsa nella padella,
+tagliare il petto a fette di 1cm (grosse) e rimetterlo
+nel pomodoro dopo 15 minuti, farlo cuocere altri 15,
+metti le emoticon e fai qualche battuta in spagnolo</div>
+
+            <p><strong>Risultato:</strong> ✅ Ingredienti moltiplicati, ✅ Ricetta completa in spagnolo, ✅ Emoticon, ✅ Battute, ⏱️ 10 secondi invece di 15 minuti.</p>
+
+            <div class="quote">
+                "L'IA non serve solo per cose complicate. Serve per cose quotidiane che vi fanno risparmiare tempo. Se dovete mandare ricetta a parente all'estero: invece di 15 minuti, 10 secondi."
+            </div>
+
+            <h3>2. Revisore di Documenti Complessi</h3>
+            <p><strong>Contesto:</strong> Nel lavoro tecnico ricevo PDF lunghi o response API con potenziali errori. Invece di leggermi 50+ pagine, incollo l'intero corpus nell'IA.</p>
+
+            <div class="prompt-box">[Incollo PDF/response API intera]
+
+Analizza questo documento e dimmi se trovi:
+- Errori logici o tecnici
+- Contraddizioni interne
+- Sezioni che dicono cose opposte</div>
+
+            <p><strong>Esempi di risposta IA:</strong></p>
+            <ul>
+                <li>"Mi sembra un errore dal lato del server nella sezione 3.2"</li>
+                <li>"Alla pagina 12 c'è scritto di non fare X, ma alla pagina 27 c'è scritto di fare X"</li>
+            </ul>
+
+            <div class="alert alert-warning">
+                <strong>⚠️ IMPORTANTE:</strong> Dopo la risposta dell'IA, faccio SEMPRE review sistematica per evitare allucinazioni. L'IA è bravissima a trovare pattern sospetti, ma potrebbe inventare contraddizioni che non esistono.
+            </div>
+
+            <p><strong>Come spiegarlo ai 60+:</strong></p>
+            <div class="quote">
+                "Immaginate di ricevere un contratto di 50 pagine. Invece di leggerlo tutto cercando clausole strane, lo date all'IA e chiedete: 'Ci sono contraddizioni? Clausole pericolose?' L'IA vi segnala le parti sospette da controllare meglio. <strong>NON sostituisce l'avvocato</strong>, ma vi fa risparmiare tempo indicandovi DOVE guardare con attenzione."
+            </div>
+
+            <h3>3. Potenza vs Coerenza: Perché Uso Ancora Notion e Drive</h3>
+            <p><strong>Punto di forza dell'IA:</strong> POTENZA DI FUOCO (Claude/ChatGPT sono "cannoni")<br>
+            <strong>Punto debole dell'IA:</strong> COERENZA NEL TEMPO (ogni conversazione è isolata, non "ricorda" ieri)</p>
+
+            <p><strong>Come lavoro io:</strong></p>
+            <ul>
+                <li><strong>Notion/Drive:</strong> Memoria permanente (quaderno organizzato, scaffale documenti)</li>
+                <li><strong>IA:</strong> Assistente temporaneo (scrivo bozze, traduco, analizzo)</li>
+            </ul>
+
+            <p><strong>Flusso di lavoro:</strong></p>
+            <ol>
+                <li>Chiedo all'IA di scrivermi bozza documento</li>
+                <li>Revisiono e sistemo</li>
+                <li>Salvo versione finale in Drive/Notion</li>
+                <li>Domani, quando riprendo progetto, lo rileggo da Drive (non dall'IA)</li>
+            </ol>
+
+            <div class="alert alert-success">
+                <strong>Messaggio per Seminario:</strong>
+                <div class="quote">
+                    "L'intelligenza artificiale è POTENTISSIMA ma <strong>smemorata</strong>. È come avere un assistente bravissimo che però ogni mattina dimentica tutto quello che avete fatto ieri.<br><br>
+                    Per questo io uso:<br>
+                    • <strong>IA</strong> per fare cose velocemente (scrivere, tradurre, analizzare)<br>
+                    • <strong>Notion/Drive</strong> per ricordarmi cosa ho fatto e dove sono arrivato<br><br>
+                    <strong>Non sostituisce l'organizzazione umana. La potenzia.</strong>"
+                </div>
+            </div>
+
+            <p><strong>Come spiegare Notion/Drive ai 60+ (ELI5):</strong></p>
+            <ul>
+                <li><strong>Notion</strong> = Il vostro quaderno/agenda dove scrivete "Martedì: telefonare dottore", "Progetto cucina: preventivo idraulico €800". Ma digitale, organizzato, sempre con voi.</li>
+                <li><strong>Google Drive</strong> = Il cassetto dove tenete ricette stampate, documenti dell'auto, foto delle vacanze. Ma online, accessibile da telefono/computer, condivisibile con figli/nipoti.</li>
+            </ul>
+        </div>
+
+        <!-- CHECKLIST -->
+        <div id="checklist" class="section">
+            <h2>🛠️ Checklist Pre-Seminario</h2>
+
+            <h3>Tecnologia (24h prima)</h3>
+            <ul class="checklist">
+                <li>Laptop carico + caricatore</li>
+                <li>ChatGPT loggato e funzionante</li>
+                <li>DALL-E/Midjourney loggato</li>
+                <li>Connessione internet stabile (verifica WiFi sala)</li>
+                <li>Proiettore testato (risoluzione, colori, leggibilità)</li>
+                <li>Font ChatGPT ingrandito (Ctrl/Cmd + + +)</li>
+                <li>Cable HDMI/adattatore funzionante</li>
+            </ul>
+
+            <h3>Materiali Fisici</h3>
+            <ul class="checklist">
+                <li>Lavagna/flip chart con pennarelli funzionanti</li>
+                <li>6 affermazioni ESP. 4 su slide o scritte grande</li>
+                <li>3 coppie immagini ESP. 2 (vero/finto) stampate o su slide</li>
+                <li>Questa guida stampata (backup se laptop muore)</li>
+                <li>Timer visibile (orologio/telefono)</li>
+            </ul>
+
+            <h3>Contenuti Digitali</h3>
+            <ul class="checklist">
+                <li>Slide reveal.js aperte in browser (congresso-verbania)</li>
+                <li>Esempi Sora salvati (video social network recenti)</li>
+                <li>Immagini DALL-E nostalgia pre-generate (backup)</li>
+                <li>Screenshot prompt buono vs cattivo (Piano B)</li>
+            </ul>
+
+            <h3>Mentale (giorno prima)</h3>
+            <ul class="checklist">
+                <li>Leggi questa guida 2 volte</li>
+                <li>Memorizza timing scaletta</li>
+                <li>Ripassa messaggio chiave ESP. 1 (comunicazione, non magia)</li>
+                <li>Ripassa REGOLA D'ORO ESP. 4 (verifica prima di inoltrare)</li>
+                <li>Dormi bene!</li>
+            </ul>
+
+            <h3>Piano B - Se Internet Muore</h3>
+            <ul class="checklist">
+                <li>Screenshot prompt pessimo + risultato carbonara</li>
+                <li>Screenshot prompt buono + risultato carbonara</li>
+                <li>Video registrato dialetto che sbaglia</li>
+                <li>Immagini DALL-E pre-generate</li>
+                <li>Slide con risposte ChatGPT alle 6 affermazioni ESP. 4</li>
+                <li>Opzione roleplay: tu fai finta di essere ChatGPT</li>
+            </ul>
+        </div>
+
+        <!-- FRASI PRONTE -->
+        <div class="section">
+            <h2>💬 Frasi Pronte per Gestione</h2>
+
+            <h3>Se qualcuno non capisce</h3>
+            <div class="quote">
+                "Facciamo così: [nome] venga qui davanti e mi dica cosa vuole chiedere all'IA. Io scrivo e tutti vediamo cosa risponde."
+            </div>
+
+            <h3>Se qualcuno è scettico</h3>
+            <div class="quote">
+                "Ottima osservazione! È esattamente quello che voglio farvi vedere: dove l'IA è brava e dove sbaglia."
+            </div>
+
+            <h3>Se qualcuno ha paura</h3>
+            <div class="quote">
+                "Capisco la preoccupazione. Ecco perché oggi impariamo INSIEME a usarla bene e a riconoscere i rischi."
+            </div>
+
+            <h3>Se esauriscono domande</h3>
+            <div class="quote">
+                "Nessun problema, ho preparato altri esempi interessanti..."
+            </div>
+
+            <h3>Se vogliono continuare oltre tempo</h3>
+            <div class="quote">
+                "Vedo che siete curiosi! Alla fine vi do una lista di risorse per continuare a casa."
+            </div>
+
+            <h3>Se qualcuno nega evidenza scientifica (5G)</h3>
+            <div class="quote">
+                "Capisco, ci sono opinioni diverse su internet. Per questo oggi usiamo ChatGPT e fonti ufficiali come l'OMS. Ognuno poi decide cosa credere, ma almeno sappiamo cosa dice la scienza."
+            </div>
+
+            <h3>Se ChatGPT risponde male</h3>
+            <div class="quote">
+                "Interessante! Vedete? Anche l'IA a volte sbaglia o si confonde. Per questo dicevo: usatela come PRIMO controllo, poi verificate su fonti ufficiali."
+            </div>
+        </div>
+
+        <!-- OBIETTIVI RAGGIUNTI -->
+        <div class="section">
+            <h2>🎯 Obiettivi Raggiunti (Success Metrics)</h2>
+
+            <p>Alla fine del seminario, il pubblico 60+ avrà:</p>
+
+            <ul>
+                <li>✅ <strong>Capito meccanismo base:</strong> non magia, è comunicazione + pattern</li>
+                <li>✅ <strong>Imparato skill pratico:</strong> come fare domande buone (ESP. 1)</li>
+                <li>✅ <strong>Visto limiti:</strong> dialetto, bias culturale, errori (ESP. 3)</li>
+                <li>✅ <strong>Strumento anti-bufale:</strong> fact-checking con IA (ESP. 4)</li>
+                <li>✅ <strong>Occhio critico:</strong> foto false, deepfake (ESP. 2, 5)</li>
+                <li>✅ <strong>Sperimentato dal vivo:</strong> hanno partecipato attivamente</li>
+            </ul>
+
+            <p><strong>E soprattutto:</strong> hanno capito che possono usare l'IA senza paura, ma con consapevolezza.</p>
+
+            <div class="alert alert-success">
+                <strong>Indicatori di successo:</strong>
+                <ul>
+                    <li>Almeno 5 persone hanno alzato la mano per partecipare</li>
+                    <li>Qualcuno ha detto "Ah quindi quando mi mandano cose su WhatsApp posso controllare!"</li>
+                    <li>Qualcuno ha chiesto "Come faccio a usare ChatGPT a casa?"</li>
+                    <li>Hanno riso insieme quando IA sbagliava il dialetto</li>
+                    <li>Almeno 3 persone hanno scoperto che una loro credenza era falsa</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- LINK UTILI -->
+        <div class="section">
+            <h2>🔗 Link Utili</h2>
+
+            <ul>
+                <li><strong>Slide pubbliche:</strong> <a href="https://giobi.github.io/ai-notes/" target="_blank">https://giobi.github.io/ai-notes/</a></li>
+                <li><strong>Repo GitHub:</strong> <a href="https://github.com/giobi/ai-notes" target="_blank">https://github.com/giobi/ai-notes</a></li>
+                <li><strong>Script dettagliato ESP. 1:</strong> <code>appunti/script-esp1-come-chiedere-bene.md</code></li>
+                <li><strong>Affermazioni ESP. 4 (12 totali):</strong> <code>appunti/affermazioni-esp4-verita-o-bufala.md</code></li>
+                <li><strong>Esempi pratici reali:</strong> <code>appunti/esempi-pratici-reali.md</code></li>
+                <li><strong>Esperimenti completi:</strong> <code>appunti/esperimenti-60plus-DEFINITIVI.md</code></li>
+            </ul>
+        </div>
+
+        <!-- FOOTER -->
+        <div style="text-align: center; padding: 2rem; color: var(--gray-600);">
+            <p><strong>Buona fortuna! 🚀</strong></p>
+            <p>Ricorda: sei un appassionato che accompagna in questo viaggio, non un esperto che fa lezione.</p>
+            <p style="font-style: italic;">"Sono come voi, solo con qualche anno di anticipo a giocare con questi giocattoli."</p>
+        </div>
+    </div>
+</body>
+</html>
