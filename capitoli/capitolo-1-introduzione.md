@@ -1,5 +1,23 @@
 # Capitolo 1: L'intelligenza artificiale - un viaggio dal sogno alla realtà
 
+## 0. Chi vi parla (1-2 minuti)
+
+**Una premessa importante**: Non sono un ricercatore accademico né uno scienziato dell'intelligenza artificiale. Sono un **appassionato** che da anni:
+
+- **Legge articoli** su riviste scientifiche divulgative e segue gli sviluppi dell'IA
+- **Usa quotidianamente** gli strumenti commerciali disponibili: ChatGPT, Gemini, DALL-E, Claude
+- **Applica l'IA** sia nel mio **lavoro** (sviluppo software, automazione) che per **passione** (sperimentazione, creatività)
+
+**Cosa significa per voi?**
+- Non vi parlerò di formule matematiche o architetture neurali complesse
+- Vi racconterò **cosa ho imparato usando** questi strumenti ogni giorno
+- Vi mostrerò **casi pratici** e **limiti reali** che ho scoperto provandoli
+- Risponderò alle vostre domande basandomi sulla **mia esperienza diretta**, non su teoria astratta
+
+**In altre parole**: Sono come voi, solo con qualche anno di anticipo a giocare con questi giocattoli. E oggi vi accompagno in questo viaggio.
+
+---
+
 ## 1.1. Dalle "Leggi della Robotica" al sogno dell'AGI (circa 5 minuti)
 
 **Isaac Asimov**: Iniziamo con un nome che tutti conoscono. Negli anni '40, il grande scrittore di fantascienza Isaac Asimov ci ha fatto sognare con le sue storie di robot. Ha introdotto le "Leggi della Robotica", un concetto che ha stabilito le fondamenta etiche per un'ipotetica intelligenza artificiale. Non erano regole per i computer, ma una visione di un futuro in cui la tecnologia si evolveva in armonia con l'umanità.
